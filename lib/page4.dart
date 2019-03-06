@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:myapp/page4_map_website.dart';
 
 
 class Page4 extends StatefulWidget {
@@ -17,15 +18,6 @@ class _Page4State extends State<Page4> {
       height: 60,
       fit: BoxFit.contain,
     );
-
-    _launchURL() async {
-      const url = 'tel:02-2355955';//電話號碼
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
 
     final moneyButton = new ButtonTheme(
         minWidth: 40.0,
@@ -71,20 +63,25 @@ class _Page4State extends State<Page4> {
         )
     );
 
-    final serviceButton = new ButtonTheme(
+    final Official_websiteButton = new ButtonTheme(
         minWidth: 40.0,
         height: 45.0,
         child: RaisedButton.icon(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          onPressed:
-            _launchURL,
+          onPressed: () {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(builder: (context) => new Page4MapWebsite()),
+            );
+          },
           color: Colors.redAccent,
-          icon: const Icon(Icons.phone,size: 24,color: Colors.white,),
-          label: new Text('聯繫客服', style: TextStyle(color: Colors.white,fontSize: 20)),
+          icon: const Icon(Icons.add_to_home_screen,size: 24,color: Colors.white,),
+          label: new Text('天師尊府聯繫', style: TextStyle(color: Colors.white,fontSize: 20)),
         )
     );
+
 
     final signoutButton = new ButtonTheme(
         minWidth: 40.0,
@@ -117,7 +114,7 @@ class _Page4State extends State<Page4> {
           SizedBox(height: 12.0),
           satisfactionButton,
           SizedBox(height: 12.0),
-          serviceButton,
+          Official_websiteButton,
           SizedBox(height: 12.0),
           signoutButton,
     ],),

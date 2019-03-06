@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home_page1.dart';
 import 'package:myapp/page4.dart';
-
+import 'package:myapp/page2.dart';
 
 class HomePage extends StatefulWidget {
   static String tag = 'home-page';
@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   int index = 0;
   List<Widget> pages = [
     HomePage1(),
-    Container(color: Colors.lightGreen,),
+    Page2(),
     Container(color: Colors.blueAccent,),
     Page4(),
   ];

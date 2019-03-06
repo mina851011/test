@@ -36,6 +36,9 @@ dev_dependencies:
 
   datetime_picker_formfield: ^0.1.8
 
+  google_maps_flutter: ^0.0.3+3
+
+  flutter_linkify: 1.1.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
